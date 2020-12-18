@@ -13,7 +13,7 @@ class JsonLeer(private val context: Context) {
         getDataFromAssets()
 
     private fun getDataFromAssets() : ModeloJson{
-        val jsonString = context.assets.open("data.json").bufferedReader().use { it.readText() }
+        val jsonString = context.assets.open("datos.json").bufferedReader().use { it.readText() }
         val gson = Gson()
         val listTipo = object : TypeToken<ModeloJson>() {}.type
         return gson.fromJson(jsonString,listTipo)
